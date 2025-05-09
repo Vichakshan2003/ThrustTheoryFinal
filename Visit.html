@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit | Thrust & Theory</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="pics/Logo.svg" alt="Rocketry & Propulsion Logo" style="height: 100px; vertical-align: middle;">
+    <h1>Theory & Thrust</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="Visit.html">Visit</a>
+        <a href="essay.html">Tour</a>
+        <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="map-intro" style="text-align: center; margin: 2em auto;"></section>
+    <h2 style="text-align: center;">U.S. Aerospace Location Map</h2>
+    <p style="text-align: center;">Hover over the stars to view museum names and states. Click a star to scroll to detailed info below.</p>
+    </section>
+
+    <div class="map-container">
+      <div class="us-map">
+      <img src="pics/USmap.jpeg" alt="U.S. Map with Icons" class="image-map">
+      <div class="map-pin" style="top: 82%; left: 79%; font-size: 1.5em;" data-target="kennedy"><span class="label">Kennedy Space Center (FL)</span>🚀</div>
+      <div class="map-pin" style="top: 82%; left: 52%; font-size: 1.5em;" data-target="johnson"><span class="label">Johnson Space Center (TX)</span>🚀</div>
+      <div class="map-pin" style="top: 56%; left: 8%; font-size: 1.5em;" data-target="jpl"><span class="label">Jet Propulsion Laboratory (CA)</span>🛰️</div>
+      <div class="map-pin" style="top: 38%; left: 3%; font-size: 1.5em;" data-target="glenn"><span class="label">Ames Research Center (CA)</span>🛰️</div>
+      <div class="map-pin" style="top: 69%; left: 70%; font-size: 1.5em;" data-target="marshall"><span class="label">Marshall Space Flight Center (AL)</span>🚀</div>
+      <div class="map-pin" style="top: 72%; left: 72%; font-size: 1.5em;" data-target="stennis"><span class="label">U.S. Space & Rocket Center (AL)</span>🏛️</div>
+      <div class="map-pin" style="top: 48%; left: 85%; font-size: 1.5em;" data-target="langley"><span class="label">Wallops Flight Facility (VA)</span>🛰️</div>
+      <div class="map-pin" style="top: 51%; left: 83%; font-size: 1.5em;" data-target="museumflight"><span class="label">Udvar-Hazy Center (VA)</span>🏛️</div>
+      <div class="map-pin" style="top: 47%; left: 77%; font-size: 1.5em;" data-target="goddard"><span class="label">Goddard Space Flight Center (MD)</span>🛰️</div>
+      <div class="map-pin" style="top: 45%; left: 85%; font-size: 1.5em;" data-target="museumflight"><span class="label">Air & Space Museum (DC)</span>🏛️</div>
+      <div class="map-pin" style="top: 36%; left: 88%; font-size: 1.5em;" data-target="intrepid"><span class="label">Intrepid Museum (NY)</span>🏛️</div>
+      </div>
+    </div>
+      
+
+    <div class="map-legend" style="border: 2px solid #00fff7; padding: 1em; border-radius: 8px; max-width: 300px; margin: 1em auto; background-color: #111; box-shadow: 0 0 10px rgba(0, 255, 247, 0.3);">
+      <h3 style="margin: 0;">Legend</h3>
+      <p>🚀 - NASA Launch & Propulsion Centers</p>
+      <p>🛰️ - Satellite & Space Research Facilities</p>
+      <p>🏛️ - Aerospace Museums</p>
+    </div>
+
+
+    <style>
+      .map-container {
+        position: relative;
+        max-width: 900px;
+        margin: 2em auto;
+        border: 2px solid #00fff7;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+      }
+      .us-map {
+        position: relative;
+        width: 100%;
+      }
+      .image-map {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      }
+      .map-pin {
+        position: absolute;
+        font-size: 1.8em;
+        color: gold;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        z-index: 2;
+      }
+      .map-pin:hover {
+        transform: translate(-50%, -50%) scale(1.2);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+      .map-pin .label {
+        display: none;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #111;
+        color: #00fff7;
+        padding: 2px 6px;
+        font-size: 10px;
+        white-space: nowrap;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0, 255, 247, 0.3);
+        pointer-events: none;
+      }
+      .map-pin:hover .label {
+        display: block;
+      }
+
+      .map-legend {
+        text-align: center;
+        margin-top: 1.5em;
+        color: #00fff7;
+        font-size: 1rem;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pins = document.querySelectorAll(".map-pin");
+        pins.forEach(pin => {
+          pin.addEventListener("click", () => {
+            const targetId = pin.getAttribute("data-target");
+            const target = document.getElementById(targetId);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        });
+      });
+    </script>
+    
+
+    <!-- Museum Cards Section -->
+    <section id="locations" class="cards-section">
+
+        <a href="https://www.nasa.gov/kennedy/" class="card-link" target="_blank">
+          <div class="card" id="kennedy">
+            <img src="pics/Kennedy.jpg" alt="Kennedy Space Center">
+            <h2>Kennedy Space Center</h2>
+            <p>Merritt Island, Florida</p>
+            <p>NASA's launch headquarters for Apollo, Shuttle, and Artemis missions.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/johnson/" class="card-link" target="_blank">
+          <div class="card" id="johnson">
+            <img src="pics/houston.jpg" alt="Johnson Space Center">
+            <h2>Johnson Space Center</h2>
+            <p>Houston, Texas</p>
+            <p>Mission Control and astronaut training for human spaceflight.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/marshall/" class="card-link" target="_blank">
+          <div class="card" id="marshall">
+            <img src="pics/marshall.jpeg" alt="Marshall Space Flight Center">
+            <h2>Marshall Space Flight Center</h2>
+            <p>Huntsville, Alabama</p>
+            <p>Designed the Saturn V rocket; develops deep space propulsion.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.caltech.edu/research/jpl" class="card-link" target="_blank">
+          <div class="card" id="jpl">
+            <img src="pics/jpl.jpeg" alt="Jet Propulsion Laboratory">
+            <h2>Jet Propulsion Laboratory</h2>
+            <p>Pasadena, California</p>
+            <p>Robotic exploration of the Solar System, Mars Rovers, Voyager.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/wallops/" class="card-link" target="_blank">
+          <div class="card" id="langley">
+            <img src="pics/wallops.jpg" alt="Wallops Flight Facility">
+            <h2>Wallops Flight Facility</h2>
+            <p>Wallops Island, Virginia</p>
+            <p>Launches for satellites, sounding rockets, and ISS resupply.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/goddard/" class="card-link" target="_blank">
+          <div class="card" id="goddard">
+            <img src="pics/Goddard.jpg" alt="Goddard Space Flight Center">
+            <h2>Goddard Space Flight Center</h2>
+            <p>Greenbelt, Maryland</p>
+            <p>Earth observation satellites and Hubble Space Telescope operations.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/stennis/" class="card-link" target="_blank">
+          <div class="card" id="stennis">
+            <img src="pics/stennis.jpg" alt="Stennis Space Center">
+            <h2>Stennis Space Center</h2>
+            <p>Hancock County, Mississippi</p>
+            <p>Main rocket engine testing facility for Artemis/SLS missions.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.nasa.gov/ames/" class="card-link" target="_blank">
+          <div class="card" id="glenn">
+            <img src="pics/ames.jpg" alt="Ames Research Center">
+            <h2>Ames Research Center</h2>
+            <p>Moffett Field, California</p>
+            <p>Spacecraft design, supercomputing, astrobiology innovations.</p>
+          </div>
+        </a>
+      
+        <a href="https://airandspace.si.edu/" class="card-link" target="_blank">
+          <div class="card" id="museumflight">
+            <img src="pics/dc.jpg" alt="National Air and Space Museum">
+            <h2>National Air and Space Museum</h2>
+            <p>Washington, D.C.</p>
+            <p>World’s largest collection of air and spacecraft; Apollo capsules.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.si.edu/museums/air-and-space-museum-udvar-hazy-center" class="card-link" target="_blank">
+          <div class="card">
+            <img src="pics/hazy.jpg" alt="Udvar-Hazy Center">
+            <h2>Udvar-Hazy Center</h2>
+            <p>Chantilly, Virginia</p>
+            <p>Massive exhibit featuring Shuttle Discovery and aviation icons.</p>
+          </div>
+        </a>
+      
+        <a href="https://intrepidmuseum.org/" class="card-link" target="_blank">
+          <div class="card" id="intrepid">
+            <img src="pics/inteprid.jpg" alt="Intrepid Sea, Air & Space Museum">
+            <h2>Intrepid Sea, Air & Space Museum</h2>
+            <p>New York City, New York</p>
+            <p>Home to Shuttle Enterprise, aboard an aircraft carrier on the Hudson River.</p>
+          </div>
+        </a>
+      
+        <a href="https://www.huntsville.org/rocket-city/us-space-rocket-center/" class="card-link" target="_blank">
+          <div class="card">
+            <img src="pics/alabama.jpeg" alt="U.S. Space & Rocket Center">
+            <h2>U.S. Space & Rocket Center</h2>
+            <p>Huntsville, Alabama</p>
+            <p>Saturn V, Pathfinder Shuttle, Space Camp USA adventures!</p>
+          </div>
+        </a>
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2025 by Thrust & Theory. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Thrust & Theory</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .section {
+      padding: 2em;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section h1, .section h2 {
+      color: #00fff7;
+      margin-bottom: 0.5em;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .section.show h1, .section.show h2 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .editor-note p, .journey-timeline p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .editor-note.show p, .journey-timeline.show p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 2em;
+    }
+    .team-member {
+      background-color: #1b1b1b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 247, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .team-member.show {
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.4);
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1em;
+      border: 2px solid #00fff7;
+    }
+    .team-member h3 {
+      margin: 0.5em 0;
+      color: #00fff7;
+    }
+    .team-member p {
+      font-size: 0.95em;
+      color: #ccc;
+      line-height: 1.4em;
+    }
+  </style>
+  <header>
+    <img src="pics/Logo.svg" alt="Rocketry & Propulsion Logo" style="height: 100px; vertical-align: middle;">
+    <h1>Theory & Thrust</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="Visit.html">Visit</a>
+      <a href="essay.html">Tour</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <h1>Welcome to Thrust & Theory</h1>
+      <p>Where rocketry meets imagination, curiosity fuels exploration, and science becomes a journey into the stars.</p>
+    </section>
+
+    <section class="section editor-note">
+      <h2>Meet the Editor</h2>
+      <img src="pics/Vick.jpeg" alt="Vick Maturu" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; border: 2px solid #00fff7;">
+      <p>Welcome to Thrust & Theory. I'm <strong>Vick Maturu</strong>, the founder and editor of this project! I have always had a keen interest in aerospace and space exploration since I was a kid, and I’m slowly turning my childhood dreams into reality. I'm a Systems Engineer with a double degree in Computer Science and Data Science. In my free time, I work on launching model rockets from simple items, and I love designing and developing new machinery.</p>
+    </section>
+
+    <section class="section">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="pics/bitmoji1.jpg" alt="Alex Carter" style="object-fit: cover; object-position: top; width: 80px; height: 80px; border-radius: 50%; border: 2px solid #00fff7;">
+          <h3>Alex Carter</h3>
+          <p><strong>Technical Writer</strong><br>Specializes in making complex aerospace topics accessible to all audiences. Loves storytelling through tech.</p>
+        </div>
+
+        <div class="team-member">
+          <img src="pics/bitmoji4.jpg" alt="Riley Morgan" style="object-fit: cover; object-position: top; width: 80px; height: 80px; border-radius: 50%; border: 2px solid #00fff7;">
+          <h3>Riley Morgan</h3>
+          <p><strong>Research Lead</strong><br>Verifies the scientific accuracy of all propulsion-related content. Always digging into flight archives and mission reports.</p>
+        </div>
+
+        <div class="team-member">
+          <img src="pics/bitmoji2.jpeg" alt="Jordan Avery" style="object-fit: cover; object-position: top; width: 80px; height: 80px; border-radius: 50%; border: 2px solid #00fff7;">
+          <h3>Jordan Avery</h3>
+          <p><strong>Visual Designer</strong><br>Creates sleek diagrams, infographics, and gallery layouts that bring our site’s vision to life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey-timeline">
+      <h2>Our Journey</h2>
+      <p><strong>2023:</strong> The idea for Thrust & Theory is born during a late-night conversation about SpaceX, Saturn V, and rocket reusability.</p>
+      <p><strong>Early 2024:</strong> First sketches and wireframes designed; major research into aerospace history and propulsion systems begins.</p>
+      <p><strong>Mid 2024:</strong> Development of the initial website starts using HTML, CSS, and creative tools like Photoshop and Illustrator.</p>
+      <p><strong>Spring 2025:</strong> Thrust & Theory officially launches, blending rocketry passion with data-driven storytelling and exploration!</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 by Thrust & Theory. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.section, .team-member');
+
+      function revealElements() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        elements.forEach(el => {
+          const elTop = el.getBoundingClientRect().top;
+          if (elTop < triggerBottom) {
+            el.classList.add('show');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', revealElements);
+      revealElements();
+    });
+  </script>
+
+</body>
+</html>

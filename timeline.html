@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline | Thrust & Theory</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 2em auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #00fff7;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      animation: growLine 2s ease-out forwards;
+    }
+    .timeline-entry {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .timeline-entry.left {
+      left: 0;
+    }
+    .timeline-entry.right {
+      left: 50%;
+    }
+    .timeline-entry::before {
+      content: \"\";
+      position: absolute;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #00fff7;
+      border: 2px solid white;
+      z-index: 1;
+      left: -10px;
+      transform: translateX(-50%);
+    }
+    .timeline-entry.right::before {
+      left: auto;
+      right: -10px;
+      transform: translateX(50%);
+    }
+    .timeline-content {
+      background-color: #1b1b1b;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 255, 247, 0.15);
+      text-align: center;
+    }
+    .timeline-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    .timeline-img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes growLine {
+      from { height: 0; }
+      to { height: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="pics/Logo.svg" alt="Rocketry & Propulsion Logo" style="height: 100px; vertical-align: middle;">
+    <h1>Theory & Thrust</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="Visit.html">Visit</a>
+      <a href="essay.html">Tour</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>History of Rocketry Timeline</h1>
+      <p>Explore the milestones that shaped humanity's journey into space, from ancient experiments to interstellar ambitions.</p>
+    </section>
+
+    <div class="timeline">
+
+      <div class="timeline-entry left">
+        <div class="timeline-content">
+          <img src="pics/rocket1.jpeg" alt="Ancient Fire Arrows" class="timeline-img">
+          <h2>1232 AD - Fire Arrows</h2>
+          <p>Chinese inventors use gunpowder-filled tubes attached to arrows, marking one of the earliest uses of rocket technology.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry right">
+        <div class="timeline-content">
+          <img src="pics/newton.jpeg" alt="Newton's Third Law" class="timeline-img">
+          <h2>1687 - Newton's Third Law</h2>
+          <p>Isaac Newton publishes his Third Law — the foundation of rocket propulsion.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry left">
+        <div class="timeline-content">
+          <img src="pics/equation.jpg" alt="Tsiolkovsky Rocket Equation" class="timeline-img">
+          <h2>1903 - Tsiolkovsky's Rocket Equation</h2>
+          <p>Konstantin Tsiolkovsky mathematically proves that rockets can work in the vacuum of space.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry right">
+        <div class="timeline-content">
+          <img src="pics/Goddard_and_Rocket.jpg" alt="Robert Goddard Rocket Launch" class="timeline-img">
+          <h2>1926 - First Liquid-Fueled Rocket</h2>
+          <p>Robert Goddard launches the first successful liquid-fueled rocket in Massachusetts.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry left">
+        <div class="timeline-content">
+          <img src="pics/v2.jpg" alt="V-2 Rocket" class="timeline-img">
+          <h2>1942 - V-2 Rocket Launch</h2>
+          <p>Germany's V-2 rocket becomes the first long-range ballistic missile and touches the edge of space.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry right">
+        <div class="timeline-content">
+          <img src="pics/Sputnik-1.jpeg" alt="Sputnik 1 Launch" class="timeline-img">
+          <h2>1957 - Sputnik 1</h2>
+          <p>The Soviet Union launches Sputnik 1 — humanity’s first artificial satellite.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry left">
+        <div class="timeline-content">
+          <img src="pics/Apollo-15-machines.jpeg" alt="Apollo 11 Moon Landing" class="timeline-img">
+          <h2>1969 - Apollo 11</h2>
+          <p>Neil Armstrong and Buzz Aldrin walk on the Moon, powered by the Saturn V rocket.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry right">
+        <div class="timeline-content">
+          <img src="pics/columbia.jpeg" alt="Space Shuttle Launch" class="timeline-img">
+          <h2>1981 - Space Shuttle Columbia</h2>
+          <p>NASA's reusable space shuttle program begins with Columbia's launch into orbit.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry left">
+        <div class="timeline-content">
+          <img src="pics/ISS.jpg" alt="International Space Station" class="timeline-img">
+          <h2>1998 - International Space Station</h2>
+          <p>The ISS project begins, creating humanity's first permanent home in orbit.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry right">
+        <div class="timeline-content">
+          <img src="pics/spacex-crew-dragon.jpg" alt="SpaceX Crew Dragon" class="timeline-img">
+          <h2>2020 - SpaceX Crew Dragon</h2>
+          <p>SpaceX's Crew Dragon becomes the first commercial spacecraft to carry astronauts to the ISS.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 by Thrust & Theory. All rights reserved.</p>
+  </footer>
+</body>
+</html>

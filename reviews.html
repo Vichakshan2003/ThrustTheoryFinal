@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | Thrust & Theory</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .reviews-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 2em;
+    }
+    .review-card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 247, 0.15);
+      text-align: left;
+      width: 45%;
+      min-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+      overflow: hidden;
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 247, 0.5);
+    }
+    .review-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: box-shadow 0.3s ease;
+    }
+    .review-card:hover .review-img {
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.5);
+    }
+    .image-credit {
+      font-size: 0.75em;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .star-rating {
+      color: gold;
+      margin-bottom: 10px;
+    }
+    .button {
+      background-color: #0078D7;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #005fa3;
+    }
+    .button.red {
+      background-color: #e50914;
+    }
+    .button.red:hover {
+      background-color: #b0070f;
+    }
+    .full-review {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease, opacity 0.8s ease;
+      margin-top: 1em;
+      opacity: 0;
+    }
+    .full-review.open {
+      max-height: 1500px;
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    function toggleReview(id, button) {
+      var content = document.getElementById(id);
+      content.classList.toggle('open');
+
+      if (content.classList.contains('open')) {
+        button.innerHTML = "Collapse ▲";
+      } else {
+        button.innerHTML = "Read More ▼";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="pics/Logo.svg" alt="Rocketry & Propulsion Logo" style="height: 100px; vertical-align: middle;">
+    <h1>Theory & Thrust</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="Visit.html">Visit</a>
+      
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Reviews</h1>
+      <p>Explore detailed reviews of aerospace experiences and media that spark curiosity and wonder about space exploration and propulsion science.</p>
+    </section>
+
+    <section class="reviews-container">
+
+      <!-- Review Card 1 -->
+      <div class="review-card">
+        <img src="pics/Museum.jpeg" alt="Steven F. Udvar-Hazy Center" class="review-img" style="object-fit: cover;">
+        <p class="image-credit">Image taken by: Vick Maturu</p>
+        <h2>Steven F. Udvar-Hazy Center</h2>
+        <p><strong>Reviewed by:</strong> Vick Maturu</p>
+        <p><strong>Published:</strong> April 25, 2025</p>
+        <p><strong>Admission:</strong> Free (Parking: $15)</p>
+        <div class="star-rating">★★★★★</div>
+        <p>A stunning museum featuring the Space Shuttle Discovery and Cold War-era rockets.</p>
+        <button onclick="toggleReview('review1', this)" class="button">Read More ▼</button>
+        <div id="review1" class="full-review">
+          <p>
+            Tucked next to <a href="https://www.flydulles.com/" target="_blank">Dulles International Airport</a> in Virginia, the <a href="https://airandspace.si.edu/udvar-hazy-center" target="_blank">Steven F. Udvar-Hazy Center</a> — part of the Smithsonian’s <a href="https://airandspace.si.edu/" target="_blank">National Air and Space Museum</a> — is a paradise for aerospace enthusiasts. During my visit over spring break, I was struck by the sheer scale and depth of the collection. For anyone interested in rocketry and propulsion, this museum isn’t just a walk through history — it’s a vivid showcase of human progress in flight, both military and interstellar.
+            </p>
+            
+            <p>
+            The hangar-like layout of the center gives you a sense of immersion from the moment you step in. You’re immediately greeted by a towering display of missiles, rockets, and full-scale spacecraft suspended overhead and arranged across the floor. Each piece is accompanied by clear, well-written plaques that explain the technology and context — from Cold War <a href="https://www.atomicheritage.org/history/cold-war" target="_blank">intercontinental ballistic missiles</a> to the Redstone rockets that launched the Mercury astronauts. What stood out to me most was the Space Shuttle Discovery, positioned in its full glory in the James S. McDonnell Space Hangar. Seeing it in person gives you an entirely new appreciation for its design: the blackened tiles from re-entry, the massive propulsion units, and the sheer size that photos never quite capture.
+            </p>
+            
+            <p>
+            Beyond the exhibits, the Udvar-Hazy Center offers a surprisingly complete visitor experience. Admission is free, like all Smithsonian museums, but you do have to pay for parking, which is $15 per vehicle (good for the whole day). The staff at the entrance are helpful, and entry lines move quickly even during busy weekends. Once inside, there’s plenty to explore — not just with the displays but also with the amenities. There’s an on-site Shake Shack, which was a pleasant surprise and a solid upgrade from typical museum food options. After a few hours walking among jets and spacecraft, sitting down with a burger and crinkle-cut fries made the day even better.
+            </p>
+            
+            <p>
+            Equally engaging was the way the museum bridges storytelling with engineering. You don’t just see engines — you understand how they work. Displays of liquid-fuel and solid-fuel propulsion systems are paired with cross-sections, diagrams, and videos that break down thrust dynamics, combustion chambers, and fuel tanks. There’s even a section dedicated to experimental aircraft and propulsion concepts, which sparks curiosity about the future of aerospace innovation. If I had one critique, it would be the occasional crowding around the more famous exhibits, but even then, the space is large enough to explore at your own pace.
+            </p>
+            
+            <p>
+            The gift shop is worth checking out, especially if you're into NASA gear, model rockets, or aviation books. It's well-stocked without being overwhelming, and you’ll probably find at least one thing you didn’t know you needed. There are also interactive activities: flight simulators, kid-friendly science areas, and windows into active restoration labs where you can watch aerospace artifacts being preserved in real time. On certain days, the museum also hosts live demos, special exhibits, and educational talks, which makes every visit feel unique.
+            </p>
+            
+            <p>
+            Whether you're a student of aerospace, a space nerd, or just someone who loves good design, the Udvar-Hazy Center is an unforgettable stop. It’s not just a museum — it’s a launchpad for curiosity and discovery, wrapped in one of the most visually impressive collections of propulsion and aviation history on Earth.
+            </p>
+            
+            <a href="https://www.si.edu/museums/air-and-space-museum-udvar-hazy-center" target="_blank" class="button">Official Site</a>
+            <a href="essay.html" class="button" style="margin-left: 10px;">Tour the Museum</a>
+              
+          </div>
+      </div>
+
+      <!-- Review Card 2 -->
+      <div class="review-card">
+        <img src="pics/Apollo13.jpg" alt="Apollo 13 Documentary" class="review-img">
+        <p class="image-credit">Image taken by: Netflix</p>
+        <h2>Apollo 13 Documentary (Netflix)</h2>
+        <p><strong>Reviewed by:</strong> Vick Maturu</p>
+        <p><strong>Published:</strong> April 25, 2025</p>
+        <p><strong>Available on:</strong> Netflix</p>
+        <div class="star-rating">★★★★☆</div>
+        <p>A gripping retelling of NASA’s most famous space survival story — Apollo 13.</p>
+        <button onclick="toggleReview('review2', this)" class="button">Read More ▼</button>
+        <div id="review2" class="full-review">
+            <p>
+            Netflix’s <a href="https://www.netflix.com/title/81444292" target="_blank">Apollo 13 documentary</a> recounts one of the most harrowing moments in spaceflight history — the near-catastrophic <a href="https://history.nasa.gov/SP-350/ch-13-1.html" target="_blank">1970 Apollo 13 mission</a> that turned into a real-time rescue effort. Through a blend of archival footage, interviews, and technical explanations, the film immerses the viewer not just in the drama, but in the science and engineering behind what made survival possible. For anyone interested in rocketry and propulsion, Apollo 13 offers a gripping look at how propulsion systems can both define and defy the limits of human exploration.
+            </p>
+            
+            <p>
+            What makes the documentary stand out is how it balances narrative pacing with technical insight. The film doesn't just romanticize space travel — it gives propulsion systems their due credit as complex, delicate instruments. From the failure of the <a href="https://www.planetary.org/space-missions/apollo-13#:~:text=The%20committee%20concluded%20that%20damaged,the%20oxygen%20and%20insulation%20material." target="_blank">oxygen tank explosion</a> that led to the aborted lunar landing, to the improvised firing of the Lunar Module’s descent engine for course correction, the film highlights the critical role propulsion played in both the crisis and the solution. It’s especially compelling how the documentary communicates this to non-engineers — without dumbing it down. The use of CGI simulations, such as <a href="https://www.youtube.com/watch?v=Zf1BqKfPbCU" target="_blank">this one</a>, adds authenticity, and the commentary from astronauts and engineers gives viewers an inside look at how decisions were made under pressure.
+            </p>
+            
+            <p>
+            Visually, the documentary is clean and informative. Archival visuals are remastered with care, and when paired with CGI simulations, they clarify the mission’s most tense moments — like the burn maneuver used to re-enter Earth’s atmosphere with no room for error. The emotional dimension is also powerful. Watching mission control fight exhaustion and fear while trusting in calculations and propulsion math reinforces just how interdisciplinary space travel really is. If there's a downside, it's that viewers unfamiliar with the broader Apollo program might feel dropped into the middle of the story — but the core of it remains deeply human and universally thrilling.
+            </p>
+            
+          <a href="https://www.netflix.com/title/81444292" target="_blank" class="button red">Watch Now</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 by Thrust & Theory. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
